@@ -1,0 +1,45 @@
+<header>
+  <mat-toolbar color="primary">
+    <!-- Logo -->
+    <a mat-button href="#" class="logo">Flow</a>
+
+    <!-- Menu de Hambúrguer (para telas pequenas) -->
+    <button mat-icon-button (click)="toggleMenu()" class="hamburger">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Links de Navegação -->
+    <nav>
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li><a mat-button href="#">Home</a></li>
+        <li><a mat-button href="#">Sobre</a></li>
+        <li><a mat-button href="#">Serviços</a></li>
+        <li><a mat-button href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Espaço entre os elementos -->
+    <span class="spacer"></span>
+
+    <!-- Informações do Perfil -->
+    <div class="profile-info">
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>person</mat-icon>
+          <span>Gabriel</span>
+        </button>
+        <button mat-menu-item (click)="toggleDarkMode()">
+          <mat-icon>brightness_4</mat-icon>
+          <span>Dark Mode</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>logout</mat-icon>
+          <span>Sair</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+</header>
